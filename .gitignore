@@ -1,0 +1,9 @@
+target
+node_modules
+.vscode
+.scala-build
+.metals
+.idea
+.bsp
+.bloop
+metals.sbt

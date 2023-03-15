@@ -1,0 +1,119 @@
+:root {
+    --main-border: 1px solid #333;
+    --main-border-radius: 1px;
+    --main-square-side-size: 26px;
+}
+
+html {
+    -webkit-box-sizing: inherit;
+    box-sizing: border-box;
+}
+
+* {
+    touch-action: manipulation;
+}
+
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.generator {
+    font-size: 16px;
+    min-width: 340px;
+    background-color: #fdfdfd;
+}
+
+.password-view-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.generator__check {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.checkbox__input {
+    border: var(--main-border);
+    border-radius: var(--main-border-radius);
+    width: var(--main-square-side-size);
+    height: var(--main-square-side-size);
+}
+.generator__hr {
+    border: 0px;
+    color: rgb(200, 200, 200);
+    background-color: rgb(200, 200, 200);
+    padding: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-block: 0px;
+    height: 1px;
+}
+.generator__int-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.generator__range-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.number-picker__button {
+    padding: 0px;
+    border: var(--main-border);
+    border-radius: var(--main-border-radius);
+    min-width: var(--main-square-side-size);
+    min-height: var(--main-square-side-size);
+}
+.password-view-row__p {
+    word-break: break-all;
+    white-space: normal;
+    width: 250px;
+    min-height: 75px;
+}
+.password-view-row__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+.password-view-row__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--main-square-side-size);
+    height: var(--main-square-side-size);
+    border: var(--main-border);
+    border-radius: var(--main-border-radius);
+    padding: 0;
+    margin: 0;
+    margin-bottom: 11px;
+}
+.tooltip__div {
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    transform: translate(-50%, 0%);
+    border: var(--main-border);
+    background: rgba(213, 210, 210, 0.863);
+    display: block;
+}
+.tooltip__text {
+    margin: 5px;
+}
