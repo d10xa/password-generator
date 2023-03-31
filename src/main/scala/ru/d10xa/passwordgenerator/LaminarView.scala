@@ -130,13 +130,6 @@ class LaminarView {
       f = i => UpdateMinSpecial(_ + i)
     )
 
-    val intInputs = Vector(
-      minimumUppercase,
-      minimumLowercase,
-      minimumNumbers,
-      minimumSpecial
-    )
-
     val lenghtRow = LabelRow(
       className = "generator__range-input",
       labelText = "Length",
