@@ -52,7 +52,7 @@ class State {
         if (!state.allowToDisableCheckbox && enabled) {
           state
         } else {
-          state.copy(uppercaseEnabled = !enabled)
+          state.copy(uppercaseEnabled = !enabled).updateLength()
         }
       }
     case UpdateLowercaseCheckbox() =>
@@ -61,7 +61,7 @@ class State {
         if (!state.allowToDisableCheckbox && enabled) {
           state
         } else {
-          state.copy(lowercaseEnabled = !enabled)
+          state.copy(lowercaseEnabled = !enabled).updateLength()
         }
       }
     case UpdateSpecialCheckbox() =>
@@ -70,7 +70,7 @@ class State {
         if (!state.allowToDisableCheckbox && enabled) {
           state
         } else {
-          state.copy(specialEnabled = !enabled)
+          state.copy(specialEnabled = !enabled).updateLength()
         }
       }
     case UpdateNumberCheckbox() =>
@@ -79,7 +79,7 @@ class State {
         if (!state.allowToDisableCheckbox && enabled) {
           state
         } else {
-          state.copy(numberEnabled = !enabled)
+          state.copy(numberEnabled = !enabled).updateLength()
         }
       }
     case UpdateAmbiguousCheckbox() =>

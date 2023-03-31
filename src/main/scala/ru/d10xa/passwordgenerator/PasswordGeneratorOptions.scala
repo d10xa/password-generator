@@ -18,10 +18,15 @@ case class PasswordGeneratorOptions(
   val uppercaseValueEnabled: Int = if (uppercaseEnabled) uppercaseValue else 0
   val numberValueEnabled: Int = if (numberEnabled) numberValue else 0
   val specialValueEnabled: Int = if (specialEnabled) specialValue else 0
+
+  val lowercaseValueEnabled01: Int = if (lowercaseEnabled) 1 else 0
+  val uppercaseValueEnabled01: Int = if (uppercaseEnabled) 1 else 0
+  val numberValueEnabled01: Int = if (numberEnabled) 1 else 0
+  val specialValueEnabled01: Int = if (specialEnabled) 1 else 0
+
   val allValuesEnabledSum: Int =
     lowercaseValueEnabled + uppercaseValueEnabled +
       numberValueEnabled + specialValueEnabled
-  val lengthLeftBound: Int = allValuesEnabledSum
   val numberRightBound: Int =
     lengthValue - (allValuesEnabledSum - numberValueEnabled)
   val lowercaseRightBound: Int =
@@ -30,6 +35,8 @@ case class PasswordGeneratorOptions(
     lengthValue - (allValuesEnabledSum - uppercaseValueEnabled)
   val specialRightBound: Int =
     lengthValue - (allValuesEnabledSum - specialValueEnabled)
+  val lengthLeftBound: Int = lowercaseValueEnabled01 + uppercaseValueEnabled01 +
+    numberValueEnabled01 + specialValueEnabled01
 
   val lowercaseCharSet: Vector[Char] = {
     val chars = "abcdefghijkmnopqrstuvwxyz".toVector
@@ -56,6 +63,8 @@ case class PasswordGeneratorOptions(
     val newValue = fit(f(lengthValue))
     this.copy(lengthValue = scala.math.max(newValue, lengthLeftBound))
   }
+  def updateLength(): PasswordGeneratorOptions = this.updateLength(identity)
+  
   def updateNumber(f: Int => Int): PasswordGeneratorOptions = {
       def fit = fitInRange(1, numberRightBound)
       val oldValue = numberValue
