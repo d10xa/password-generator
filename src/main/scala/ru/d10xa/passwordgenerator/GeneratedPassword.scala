@@ -4,5 +4,5 @@ object GeneratedPassword {
   def apply(s: String): GeneratedPassword = s
 }
 extension (p: GeneratedPassword) {
-  def toString(): String = p.toString
+  def toString: String = p
 }
