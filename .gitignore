@@ -7,3 +7,4 @@ node_modules
 .bsp
 .bloop
 metals.sbt
+package*.json
